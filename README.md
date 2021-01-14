@@ -1,6 +1,6 @@
 # Netguru recruitment task
 
-Application for fetching and storing geolocation data from https://vpic.nhtsa.dot.gov/api/
+Application for fetching and storing cars data from https://vpic.nhtsa.dot.gov/api/
 
 There are 4 main endpoints:
 
