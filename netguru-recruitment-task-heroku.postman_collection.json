@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "20f2745e-0b3c-43ef-a19c-b82f502b7332",
+		"name": "netguru-recruitment-task-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://netguru-recruitment-task.herokuapp.com/api/v1/cars/",
+					"protocol": "http",
+					"host": [
+						"netguru-recruitment-task",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list cars ordered by popularity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://netguru-recruitment-task.herokuapp.com/api/v1/cars/popular/",
+					"protocol": "http",
+					"host": [
+						"netguru-recruitment-task",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"popular",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"make\": \"Mercedes\",\r\n    \"name\": \"S-Class\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://netguru-recruitment-task.herokuapp.com/api/v1/cars/",
+					"protocol": "http",
+					"host": [
+						"netguru-recruitment-task",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rate car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rating\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://netguru-recruitment-task.herokuapp.com/api/v1/cars/3/rate/",
+					"protocol": "http",
+					"host": [
+						"netguru-recruitment-task",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"3",
+						"rate",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
