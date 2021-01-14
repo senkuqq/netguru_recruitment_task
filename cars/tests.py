@@ -36,13 +36,13 @@ class TestCars(TestCase):
         self.assertTrue(response.status_code == 200, 'Wrong status code')
 
     def test_get_list_of_cars(self):
-        response = self.client.get('/api/v1/car/', content_type='application/json')
+        response = self.client.get('/api/v1/cars/', content_type='application/json')
         results = response.json().get('results')
         self.assertTrue(response.status_code == 200, 'Wrong status code')
         self.assertTrue(len(results) == 3, 'Results should have 3 records')
 
     def test_get_list_of_cars_popular(self):
-        response = self.client.get('/api/v1/car/popular/', content_type='application/json')
+        response = self.client.get('/api/v1/cars/popular/', content_type='application/json')
         results = response.json().get('results')
         self.assertTrue(len(results) == 3, 'Results should have 3 records!')
         self.assertTrue(results[0].get("id") == self.car2.id, 'Car2 should be the most popular!')
@@ -52,7 +52,7 @@ class TestCars(TestCase):
             "make": "Mercedes",
             "name": "S-Class",
         }
-        response = self.client.post('/api/v1/car/', data=json.dumps(payload), content_type='application/json')
+        response = self.client.post('/api/v1/cars/', data=json.dumps(payload), content_type='application/json')
         self.assertTrue(response.status_code == 201, 'Wrong status code!')
         self.assertTrue(Car.objects.filter(name='S-Class', make__name='Mercedes').exists(), 'Car not created!')
 
@@ -61,13 +61,13 @@ class TestCars(TestCase):
             "make": "MySuperCarMaker",
             "name": "SuperS",
         }
-        response = self.client.post('/api/v1/car/', data=json.dumps(payload), content_type='application/json')
+        response = self.client.post('/api/v1/cars/', data=json.dumps(payload), content_type='application/json')
         self.assertTrue(response.status_code == 404, 'Wrong status code!')
 
     def test_post_car_rating(self):
         payload = {
             "rating": 2,
         }
-        response = self.client.post('/api/v1/car/{}/rate/'.format(self.car3.id), data=json.dumps(payload), content_type='application/json')
+        response = self.client.post('/api/v1/cars/{}/rate/'.format(self.car3.id), data=json.dumps(payload), content_type='application/json')
         self.assertTrue(response.status_code == 201, 'Wrong status code!')
         self.assertTrue(CarRating.objects.filter(car=self.car3).exists(), 'Car rating not created!')
