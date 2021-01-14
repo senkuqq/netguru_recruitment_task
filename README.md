@@ -52,7 +52,7 @@ $ docker exec -it app python manage.py createsuperuser
 # Online
 You can check online version on [heroku](http://netguru-recruitment-task.herokuapp.com/api/v1/).
 
-There is file netguru.postman_collection.json which You can import to Postman and try endpoints by yourself! 
+There is file netguru-recruitment-task-heroku.postman_collection.json which You can import to Postman and try endpoints by yourself! 
 
 # Comments
 * I decided to change a little bit location of endpoints to make it more predictable
