@@ -1,0 +1,10 @@
+staticfiles/
+static/
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+.vscode

@@ -1,0 +1,1 @@
+web: gunicorn netguru_recruitment_task.wsgi --log-file -
